@@ -18,6 +18,57 @@ header {
     border-bottom: 3px solid #3b82f6;
 }
 
+.card {
+    width: 400px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 60px auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* IMAGEM TOPO */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transform: scaleY(1.1); /* cresce só verticalmente */
+    transform-origin: top;  /* cresce para baixo */
+}
+
+/* CONTEUDO */
+.card-content {
+    padding: 25px;
+    color: #e4e4e7;
+}
+
+/* LINHA COM TEXTO NO MEIO */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.separator::before {
+    margin-right: 10px;
+}
+
+.separator::after {
+    margin-left: 10px;
+}
+
+
 /* TITULO GRANDE */
 .tituloInicio2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -158,6 +209,21 @@ body {
         <div class="icon">⚙️</div>
         <div class="label">Config</div>
     </a>
+</div>
+
+<div class="card">
+    <img src="https://picsum.photos/600/400" alt="Imagem exemplo">
+
+    <div class="card-content">
+        <h2>Título do Card</h2>
+
+        <div class="separator">Informações</div>
+
+        <p>
+            Este é um exemplo de texto dentro da caixa. 
+            Você pode colocar descrição, botões ou qualquer conteúdo aqui.
+        </p>
+    </div>
 </div>
 
 </body>
