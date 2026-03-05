@@ -4,19 +4,44 @@
 <meta charset="UTF-8">
 <title>Hugo's hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+/* HEADER */
 header {
-    background-color: #0c0c0c;
+    background-color: #0c0c0cd3;
     height: 150px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+    border-bottom: 3px solid #3b82f6;
 }
 
+/* TITULO GRANDE */
+.tituloInicio2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.7),
+        0px 0px 8px rgba(255, 255, 255, 0.219);
+    letter-spacing: -0.4px;
+    color: rgb(255, 255, 255);
+    font-weight: 540;
+    margin: 0;
+    margin-left: 7px;
+}
 
+/* TITULO MENOR (AGORA MAIOR) */
+.tituloInicio {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem; /* AUMENTADO */
+    color: #d4d4d8;
+    margin: 0;
+    margin-bottom: 8px
+}
+
+/* BODY */
 body {
     margin: 0;
     height: 100vh;
@@ -24,41 +49,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
-
-
-.tituloInicio2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: fixed;
-    left: 25%;
-    bottom: 90%;
-    font-size: 2.5rem;
-    text-shadow: 
-    2px 2px 4px rgba(0,0,0,0.7),
-    0px 0px 8px rgba(255, 255, 255, 0.219);
-    letter-spacing: -0.4px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-weight: 540;
-    margin: 0px;
-    white-space: pre-line;
-}
-
-.tituloInicio {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
-    position: fixed;
-    bottom: 91%;
-    left: 50px;
-    color: #d4d4d8;
-}
-
 /* MENU CONTAINER */
 .menu {
     position: fixed;
     top: 15px;
     right: 15px;
-
     background: rgba(30, 30, 30, 0.6);
     backdrop-filter: blur(25px);
     border-radius: 20px;
@@ -72,8 +67,8 @@ body {
 /* LINK BUTTON */
 .link {
     position: relative;
-    width: 42px;      /* smaller */
-    height: 42px;     /* smaller */
+    width: 42px;
+    height: 42px;
     border-radius: 16px;
     text-decoration: none;
     color: #d4d4d8;
@@ -90,7 +85,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: left 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    font-size: 16px;  /* smaller */
+    font-size: 16px;
 }
 
 /* LABEL */
@@ -103,13 +98,13 @@ body {
     white-space: nowrap;
     transition: opacity 0.25s ease;
     font-weight: 500;
-    font-size: 13px;  /* smaller */
+    font-size: 13px;
     color: #f4f4f5;
 }
 
 /* HOVER */
 .link:hover {
-    width: 110px;   /* smaller expansion */
+    width: 110px;
     background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
 }
@@ -134,30 +129,34 @@ body {
 }
 </style>
 </head>
+
 <body>
-    <header>
-        <div class="header-box">
+
+<header>
+    <div class="header-box">
+        <div class="headerdiv">
             <h4 class="tituloInicio">Inicio</h4>
             <h1 class="tituloInicio2">Bem vindo, Hugo's hub a sua disponibilidade</h1>
         </div>
-    </header>
+    </div>
+</header>
 
 <div class="menu">
     <a href="#" class="link active">
         <div class="icon">🏠</div>
-        <div class="label"> Inicio</div>
+        <div class="label">Inicio</div>
     </a>
     <a href="#" class="link">
         <div class="icon">🔍</div>
-        <div class="label"> Procurar</div>
+        <div class="label">Procurar</div>
     </a>
     <a href="#" class="link">
         <div class="icon">❤️</div>
-        <div class="label"> Favoritos</div>
+        <div class="label">Favoritos</div>
     </a>
     <a href="#" class="link">
         <div class="icon">⚙️</div>
-        <div class="label"> Config</div>
+        <div class="label">Config</div>
     </a>
 </div>
 
