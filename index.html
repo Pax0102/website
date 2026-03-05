@@ -7,6 +7,44 @@
 
 <style>
 
+footer{
+    background:rgba(12,12,12,0.85);
+    backdrop-filter:blur(10px);
+    border-top:3px solid #3b82f6;
+    margin-top:40px;
+}
+
+.footer-container{
+    max-width:1400px;
+    margin:auto;
+    padding:25px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.footer-text{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a{
+    color:#d4d4d8;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.2s;
+}
+
+.footer-links a:hover{
+    color:#3b82f6;
+}
+
 body{
     margin:0;
     background:linear-gradient(145deg,#0f0f0f,#1a1a1a);
@@ -158,6 +196,14 @@ header{
 
 </style>
 </head>
+
+<footer>
+    <div class="footer-container">
+    <div class="footer-text">
+    © 2026 Hugo's Hub • Todos os direitos reservados
+    </div>
+    </div>
+    </footer>
 
 <body>
 
