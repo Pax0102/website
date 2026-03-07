@@ -30,15 +30,17 @@ header{background:#0c0c0cd3;height:120px;width:100%;display:flex;align-items:cen
 .link:hover .label,.link.active .label{opacity:1}
 .link.active .label{color:#3b82f6}
 
-/* Contêiner de colunas */
-.cards-container{
+/* Container das 4 colunas */
+.cards-container {
   display:flex;
   gap:30px;
   max-width:1400px;
   margin:auto;
   padding:40px;
 }
-.column{
+
+/* Cada coluna vertical */
+.column {
   display:flex;
   flex-direction:column;
   gap:30px;
@@ -218,8 +220,10 @@ footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px s
   </a>
 </div>
 
-<!-- Coluna 4 (vazia, mantém layout) -->
-<div class="column"></div>
+<!-- Coluna 4 -->
+<div class="column">
+  <!-- Apenas para manter layout 4 colunas -->
+</div>
 
 </div>
 
