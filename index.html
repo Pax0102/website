@@ -30,13 +30,28 @@ header{background:#0c0c0cd3;height:120px;width:100%;display:flex;align-items:cen
 .link:hover .label,.link.active .label{opacity:1}
 .link.active .label{color:#3b82f6}
 
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:40px;max-width:1400px;margin:auto}
+/* Contêiner de colunas */
+.cards-container{
+  display:flex;
+  gap:30px;
+  max-width:1400px;
+  margin:auto;
+  padding:40px;
+}
+.column{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  flex:1;
+}
 
-.card-link{text-decoration:none;color:inherit}
+.card-link,
+.card{
+display:block;
+width:100%;
+}
 
 .card{
-width:100%;
-min-height:300px;
 background:rgba(30,30,30,.55);
 backdrop-filter:blur(12px);
 border-radius:20px;
@@ -58,7 +73,7 @@ position:relative;
 .separator:before{margin-right:10px}
 .separator:after{margin-left:10px}
 
-/* menu da moto */
+/* Menu da Moto X3m */
 .moto-menu{
 overflow:hidden;
 display:flex;
@@ -70,7 +85,7 @@ transition:max-height .35s, padding .35s;
 }
 
 .moto-menu.open{
-max-height:300px; /* altura máxima do menu quando abre */
+max-height:300px;
 padding:10px 20px 20px 20px;
 }
 
@@ -113,94 +128,98 @@ footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px s
 <a href="https://pax0102.github.io/Config/" class="link"><div class="icon">⚙️</div><div class="label">Config</div></a>
 </div>
 
-<div class="cards">
+<div class="cards-container">
 
-<!-- Card CS 1.6 -->
-<a href="#" class="card-link">
-<div class="card">
-<img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/1.6.webp">
-<div class="card-content">
-<h2>CS 1.6</h2>
-<div class="separator">Informações</div>
-<p>CS 1.6, Tiro, Luta, Armamento | Créditos: Guilherme</p>
-</div>
-</div>
-</a>
-
-<!-- Card Drift Hunters -->
-<a href="#" class="card-link">
-<div class="card">
-<img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/Drift-Hunters-Pro.jpg">
-<div class="card-content">
-<h2>Drift Hunters</h2>
-<div class="separator">Informações</div>
-<p>Drift Hunters Pro, Drift, Carro, Dirigir, Repetitivo</p>
-</div>
-</div>
-</a>
-
-<!-- Card Moto X3m -->
-<div class="card" id="motoCard">
-<img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/motox3m.webp">
-<div class="card-content">
-<h2>Moto X3m</h2>
-<div class="separator">Informações</div>
-<p>Moto X3m, Moto, Classico, Divertido | 3 opções</p>
-</div>
-<div class="moto-menu" id="motoMenu">
-<a href="#" class="moto-option">🏍️ Moto-X3m</a>
-<a href="https://pax0102.github.io/Moto-X3m-Winter/" class="moto-option">🎄 Moto-X3m-Winter</a>
-<a href="#" class="moto-option">🎃 Moto-X3m-Spooky-Land</a>
-</div>
+<!-- Coluna 1 -->
+<div class="column">
+  <a href="#" class="card-link">
+    <div class="card">
+      <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/1.6.webp">
+      <div class="card-content">
+        <h2>CS 1.6</h2>
+        <div class="separator">Informações</div>
+        <p>CS 1.6, Tiro, Luta, Armamento | Créditos: Guilherme</p>
+      </div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <img src="https://escaperoad.io/cache/data/image/game/crazy-shark-eroad1-f250x250.webp">
+      <div class="card-content">
+        <h2>Crazy Shark</h2>
+        <div class="separator">Informações</div>
+        <p>Crazy Shark, Tubarao, Aventura, Evolutivo</p>
+      </div>
+    </div>
+  </a>
 </div>
 
-<!-- Card Crazy Shark -->
-<a href="#" class="card-link">
-<div class="card">
-<img src="https://escaperoad.io/cache/data/image/game/crazy-shark-eroad1-f250x250.webp">
-<div class="card-content">
-<h2>Crazy Shark</h2>
-<div class="separator">Informações</div>
-<p>Crazy Shark, Tubarao, Aventura, Evolutivo</p>
-</div>
-</div>
-</a>
+<!-- Coluna 2 -->
+<div class="column">
+  <a href="#" class="card-link">
+    <div class="card">
+      <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/Drift-Hunters-Pro.jpg">
+      <div class="card-content">
+        <h2>Drift Hunters</h2>
+        <div class="separator">Informações</div>
+        <p>Drift Hunters Pro, Drift, Carro, Dirigir, Repetitivo</p>
+      </div>
+    </div>
+  </a>
 
-<!-- Card TWHG 2 -->
-<a href="#" class="card-link">
-<div class="card">
-<img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/hardgame2.webp">
-<div class="card-content">
-<h2>TWHG 2</h2>
-<div class="separator">Informações</div>
-<p>TWHG 2, Dificil, Paciencia, Levels, Demorado</p>
-</div>
-</div>
-</a>
+  <!-- Card Moto X3m -->
+  <div class="card" id="motoCard">
+    <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/motox3m.webp">
+    <div class="card-content">
+      <h2>Moto X3m</h2>
+      <div class="separator">Informações</div>
+      <p>Moto X3m, Moto, Classico, Divertido | 3 opções</p>
+    </div>
+    <div class="moto-menu" id="motoMenu">
+      <a href="#" class="moto-option">🏍️ Moto-X3m</a>
+      <a href="https://pax0102.github.io/Moto-X3m-Winter/" class="moto-option">🎄 Moto-X3m-Winter</a>
+      <a href="#" class="moto-option">🎃 Moto-X3m-Spooky-Land</a>
+    </div>
+  </div>
 
-<!-- Card Drive Mad -->
-<a href="#" class="card-link">
-<div class="card">
-<img src="https://pub-c77eb84ebd5c408aa81bb7f3302cac57.r2.dev/attached_assets/game_icons/Drive%20Mad.webp">
-<div class="card-content">
-<h2>Drive Mad</h2>
-<div class="separator">Informações</div>
-<p>Drive Mad, Carro, Divertido, Levels, Novo</p>
+  <a href="#" class="card-link">
+    <div class="card">
+      <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/hardgame2.webp">
+      <div class="card-content">
+        <h2>TWHG 2</h2>
+        <div class="separator">Informações</div>
+        <p>TWHG 2, Dificil, Paciencia, Levels, Demorado</p>
+      </div>
+    </div>
+  </a>
 </div>
-</div>
-</a>
 
-<!-- Card Ragdoll Archers -->
-<a href="https://pax0102.github.io/Ragdoll-Archers/" class="card-link">
-<div class="card">
-<img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/ragdoll-archers.jpg">
-<div class="card-content">
-<h2>Ragdoll Archers</h2>
-<div class="separator">Informações</div>
-<p>Ragdoll Archers, Arqueiro, Demorado, Evolutivo</p>
+<!-- Coluna 3 -->
+<div class="column">
+  <a href="#" class="card-link">
+    <div class="card">
+      <img src="https://pub-c77eb84ebd5c408aa81bb7f3302cac57.r2.dev/attached_assets/game_icons/Drive%20Mad.webp">
+      <div class="card-content">
+        <h2>Drive Mad</h2>
+        <div class="separator">Informações</div>
+        <p>Drive Mad, Carro, Divertido, Levels, Novo</p>
+      </div>
+    </div>
+  </a>
+  <a href="https://pax0102.github.io/Ragdoll-Archers/" class="card-link">
+    <div class="card">
+      <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/ragdoll-archers.jpg">
+      <div class="card-content">
+        <h2>Ragdoll Archers</h2>
+        <div class="separator">Informações</div>
+        <p>Ragdoll Archers, Arqueiro, Demorado, Evolutivo</p>
+      </div>
+    </div>
+  </a>
 </div>
-</div>
-</a>
+
+<!-- Coluna 4 (vazia, mantém layout) -->
+<div class="column"></div>
 
 </div>
 
@@ -214,15 +233,8 @@ footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px s
 const motoCard = document.getElementById("motoCard");
 const motoMenu = document.getElementById("motoMenu");
 
-// Função para abrir/fechar o menu e empurrar os cards abaixo
 motoCard.addEventListener("click", () => {
   motoMenu.classList.toggle("open");
-
-  // Calcula altura extra que o menu abriu
-  const extraHeight = motoMenu.classList.contains("open") ? motoMenu.scrollHeight : 0;
-
-  // Ajusta margin-bottom do card da Moto para empurrar cards abaixo
-  motoCard.style.marginBottom = extraHeight + "px";
 });
 </script>
 
