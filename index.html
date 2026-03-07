@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +9,6 @@
 
 <style>
 body{margin:0;background:linear-gradient(145deg,#0f0f0f,#1a1a1a);font-family:Arial,sans-serif; scrollbar-width: none; -ms-overflow-style: none;}
-
 body::-webkit-scrollbar {width: 0px; background: transparent;}
 
 header{background:#0c0c0cd3;height:120px;width:100%;display:flex;align-items:center;padding:0 40px;border-bottom:3px solid #3b82f6;box-sizing:border-box}
@@ -35,7 +35,19 @@ header{background:#0c0c0cd3;height:120px;width:100%;display:flex;align-items:cen
 
 .card-link{text-decoration:none;color:inherit}
 
-.card{width:100%;height:300px;background:rgba(30,30,30,.55);backdrop-filter:blur(12px);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 35px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.05);transition:.3s}
+.card{
+width:100%;
+min-height:300px;
+background:rgba(30,30,30,.55);
+backdrop-filter:blur(12px);
+border-radius:20px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 10px 35px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.05);
+transition:.3s;
+cursor:pointer
+}
+
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.8),0 0 20px rgba(59,130,246,.25)}
 
 .card img{width:100%;height:120px;object-fit:cover}
@@ -46,11 +58,46 @@ header{background:#0c0c0cd3;height:120px;width:100%;display:flex;align-items:cen
 .separator:before{margin-right:10px}
 .separator:after{margin-left:10px}
 
+/* menu animado */
+
+.moto-menu{
+max-height:0;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+gap:8px;
+transition:.35s;
+padding:0 20px
+}
+
+.moto-menu.open{
+max-height:200px;
+padding-bottom:20px
+}
+
+.moto-option{
+background:rgba(30,30,30,.65);
+border:1px solid rgba(255,255,255,.08);
+padding:10px;
+border-radius:12px;
+text-decoration:none;
+color:#d4d4d8;
+font-size:14px;
+transition:.25s
+}
+
+.moto-option:hover{
+background:rgba(59,130,246,.25);
+color:#3b82f6;
+transform:translateX(4px)
+}
+
 footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px solid #3b82f6;margin-top:40px}
 
 .footer-container{max-width:1400px;margin:auto;padding:25px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 .footer-text{color:#9ca3af;font-size:14px}
 </style>
+
 </head>
 
 <body>
@@ -63,7 +110,7 @@ footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px s
 </header>
 
 <div class="menu">
-<a href="#" class="link active"><div class="icon">🏠</div><div class="label">Inicio</div></a> <!-- deixe o href aqui como "#" -->
+<a href="#" class="link active"><div class="icon">🏠</div><div class="label">Inicio</div></a>
 <a href="#" class="link"><div class="icon">🔍</div><div class="label">Procurar</div></a>
 <a href="#" class="link"><div class="icon">❤️</div><div class="label">Favoritos</div></a>
 <a href="https://pax0102.github.io/Config/" class="link"><div class="icon">⚙️</div><div class="label">Config</div></a>
@@ -71,40 +118,86 @@ footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px s
 
 <div class="cards">
 
-<a href="#" class="card-link"><div class="card">  <!-- mudar link aqui -->
+<a href="#" class="card-link">
+<div class="card">
 <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/1.6.webp">
-<div class="card-content"><h2>CS 1.6</h2><div class="separator">Informações</div><p>CS 1.6, Tiro, Luta, Armamento | Créditos: Guilherme</p></div>
-</div></a>
+<div class="card-content">
+<h2>CS 1.6</h2>
+<div class="separator">Informações</div>
+<p>CS 1.6, Tiro, Luta, Armamento | Créditos: Guilherme</p>
+</div>
+</div>
+</a>
 
-<a href="#" class="card-link"><div class="card">  <!-- mudar link aqui -->
+<a href="#" class="card-link">
+<div class="card">
 <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/Drift-Hunters-Pro.jpg">
-<div class="card-content"><h2>Drift Hunters</h2><div class="separator">Informações</div><p>Drift Hunters Pro, Drift, Carro, Dirigir</p></div>
-</div></a>
+<div class="card-content">
+<h2>Drift Hunters</h2>
+<div class="separator">Informações</div>
+<p>Drift Hunters Pro, Drift, Carro, Dirigir</p>
+</div>
+</div>
+</a>
 
-<a href="https://pax0102.github.io/Moto-X3m-Winter/" class="card-link"><div class="card">
+<div class="card" onclick="toggleMotoMenu()">
 <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/motox3mwinter.webp">
-<div class="card-content"><h2>Moto X3m Winter</h2><div class="separator">Informações</div><p>Moto X3m Winter, Moto, Classico, Divertido</p></div>
-</div></a>
+<div class="card-content">
+<h2>Moto X3m Winter</h2>
+<div class="separator">Informações</div>
+<p>Moto X3m Winter, Moto, Classico, Divertido</p>
+</div>
 
-<a href="#" class="card-link"><div class="card">  <!-- mudar link aqui -->
+<div class="moto-menu" id="motoMenu">
+<a href="https://pax0102.github.io/Moto-X3m-Winter/" class="moto-option">🎮 Jogar</a>
+<a href="#" class="moto-option">🏆 Desafios</a>
+<a href="#" class="moto-option">⭐ Favoritar</a>
+</div>
+</div>
+
+<a href="#" class="card-link">
+<div class="card">
 <img src="https://escaperoad.io/cache/data/image/game/crazy-shark-eroad1-f250x250.webp">
-<div class="card-content"><h2>Crazy Shark</h2><div class="separator">Informações</div><p>Crazy Shark, Tubarao, Aventura, Evolutivo</p></div>
-</div></a>
+<div class="card-content">
+<h2>Crazy Shark</h2>
+<div class="separator">Informações</div>
+<p>Crazy Shark, Tubarao, Aventura, Evolutivo</p>
+</div>
+</div>
+</a>
 
-<a href="#" class="card-link"><div class="card">  <!-- mudar link aqui -->
+<a href="#" class="card-link">
+<div class="card">
 <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/hardgame2.webp">
-<div class="card-content"><h2>TWHG 2</h2><div class="separator">Informações</div><p>TWHG 2, Dificil, Paciencia, Levels</p></div>
-</div></a>
+<div class="card-content">
+<h2>TWHG 2</h2>
+<div class="separator">Informações</div>
+<p>TWHG 2, Dificil, Paciencia, Levels</p>
+</div>
+</div>
+</a>
 
-<a href="#" class="card-link"><div class="card">  <!-- mudar link aqui -->
+<a href="#" class="card-link">
+<div class="card">
 <img src="https://pub-c77eb84ebd5c408aa81bb7f3302cac57.r2.dev/attached_assets/game_icons/Drive%20Mad.webp">
-<div class="card-content"><h2>Drive Mad</h2><div class="separator">Informações</div><p>Drive Mad, Carro, Divertido, Levels</p></div>
-</div></a>
+<div class="card-content">
+<h2>Drive Mad</h2>
+<div class="separator">Informações</div>
+<p>Drive Mad, Carro, Divertido, Levels</p>
+</div>
+</div>
+</a>
 
-<a href="https://pax0102.github.io/Ragdoll-Archers/" class="card-link"><div class="card">
+<a href="https://pax0102.github.io/Ragdoll-Archers/" class="card-link">
+<div class="card">
 <img src="https://cdn.jsdelivr.net/gh/mathlesson/mathlesson.github.io/img/ragdoll-archers.jpg">
-<div class="card-content"><h2>Ragdoll Archers</h2><div class="separator">Informações</div><p>Ragdoll Archers, Arqueiro, Demorado, Evolutivo</p></div>
-</div></a>
+<div class="card-content">
+<h2>Ragdoll Archers</h2>
+<div class="separator">Informações</div>
+<p>Ragdoll Archers, Arqueiro, Demorado, Evolutivo</p>
+</div>
+</div>
+</a>
 
 </div>
 
@@ -113,6 +206,12 @@ footer{background:rgba(12,12,12,.85);backdrop-filter:blur(10px);border-top:3px s
 <div class="footer-text">© 2026 Hugo's Hub • Todos os direitos reservados</div>
 </div>
 </footer>
+
+<script>
+function toggleMotoMenu(){
+document.getElementById("motoMenu").classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
